@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 50%, #0e6674 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.box {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.box h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #17a2b8, #0e6674);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.input-field:focus {
+    border-color: #17a2b8;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(23, 162, 184, 0.1);
+}
+
+.input-field::placeholder {
+    color: #adb5bd;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    margin: 30px 0;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #17a2b8, #0e6674);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(23, 162, 184, 0.4);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+.result-box {
+    min-height: 120px;
+    padding: 24px;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    border: 2px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.result-box.has-result {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    border-color: #17a2b8;
+    box-shadow: 0 8px 25px rgba(23, 162, 184, 0.3);
+    animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.result-text {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.result-bmi {
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
+    margin: 8px 0;
+    line-height: 1;
+}
+
+.result-category {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 4px;
+}
+
+.result-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.bmi-guide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #e9ecef;
+}
+
+.guide-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.guide-range {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.guide-range.underweight {
+    color: #007bff;
+}
+
+.guide-range.normal {
+    color: #17a2b8;
+}
+
+.guide-range.overweight {
+    color: #fd7e14;
+}
+
+.guide-range.obese {
+    color: #dc3545;
+}
+
+.guide-label {
+    font-size: 12px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 30px 24px;
+    }
+    
+    .box h2 {
+        font-size: 30px;
+    }
+    
+    .result-bmi {
+        font-size: 48px;
+    }
+}

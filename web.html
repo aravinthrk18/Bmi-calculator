@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Premium Health Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                <h2>BMI Calculator</h2>
+                <p class="subtitle">Track your health journey</p>
+            </div>
+            
+            <div class="input-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="70" class="input-field">
+            </div>
+            
+            <div class="input-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="170" class="input-field">
+            </div>
+            
+            <button onclick="calculator()" class="calculate-btn">Calculate BMI</button>
+            
+            <div id="result" class="result-box">
+                <p class="result-text">Your BMI will appear here</p>
+            </div>
+            
+            <div class="bmi-guide">
+                <div class="guide-item">
+                    <span class="guide-range underweight">&lt; 18.5</span>
+                    <span class="guide-label">Underweight</span>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-range normal">18.5 - 24.9</span>
+                    <span class="guide-label">Normal</span>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-range overweight">25 - 29.9</span>
+                    <span class="guide-label">Overweight</span>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-range obese">≥ 30</span>
+                    <span class="guide-label">Obese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
